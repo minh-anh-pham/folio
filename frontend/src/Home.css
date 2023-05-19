@@ -1,0 +1,69 @@
+body {
+    background-color: #EEE3D3;
+    min-height: 100vh;
+    /* font-size: calc(10px + 2vmin); */
+}
+
+.logInWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.logIn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 100px;
+}
+
+.signUp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logInWrapper img {
+    padding-right: 10px;
+    padding-bottom: 15px;
+    max-width: 50px;
+    height: auto;
+}
+
+.titleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -60px;
+    margin-bottom: -80px;
+}
+
+.titleWrapper img {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    max-width: 100px;
+    height: auto;
+}
+
+h1 {
+    color: black;
+    font-weight: 50;
+}
+
+.finger-point-left{
+    transform: scaleX(-1);
+}
+
+.writing-left{
+    transform: scaleX(-1);
+}
+
+.homeBookListWrapper{
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}

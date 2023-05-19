@@ -1,0 +1,17 @@
+.topNav {
+    margin-top: -50px;
+    margin-bottom: 10px;
+}
+
+.topNav h1 {
+    font-size: 60px;
+}
+
+.topNav img {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 8px;
+    max-width: 100px;
+    width: 60px;
+    height: auto;
+}

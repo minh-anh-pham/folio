@@ -1,0 +1,33 @@
+.bookDetailsContent {
+    width: 50vw;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.bookshelf {
+    margin: auto;
+    margin-bottom: 40px;
+    width: 300px;
+    height: 30px;
+    background: url('https://www.lignaushop.de/images/product_images/original_images/E20A-U-21050_web_2771_8.jpg') no-repeat;
+    margin-top: -3px;
+    filter: drop-shadow(0 0.20rem 0.20rem black);
+}
+
+.bookDetailsContent h3 {
+    color: black;
+   }
+
+.bookDetailsContent .subtitle {
+    margin: auto;
+    padding-bottom: 30px;
+    color: black;
+    font-family: "Work Sans";
+    font-weight: normal;
+    text-align: left;
+}
+
+.bookDetailsContent .summary {
+    text-align: left;
+    margin: auto;
+}

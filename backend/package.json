@@ -1,0 +1,29 @@
+{
+  "name": "folio",
+  "version": "1.0.0",
+  "description": "Personal library of books with options to record current page, add new books, view book details, etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "cd src && cd db && node seed.js",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minh-anh-pham/folio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minh-anh-pham/folio/issues"
+  },
+  "homepage": "https://github.com/minh-anh-pham/folio#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "sequelize": "^6.31.1",
+    "sqlite3": "^5.1.6"
+  }
+}

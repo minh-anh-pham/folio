@@ -1,0 +1,49 @@
+
+.App {
+  text-align: center;
+}
+.App::-webkit-scrollbar {
+  /* Chrome */
+  display: none;
+}
+.App {
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&family=Petrona&family=Libre+Baskerville&family=Work+Sans');
+
+h1 {
+  font-family: 'Tilt Prism', sans-serif;
+  font-size: 100px;
+}
+
+h3 {
+  color: #1F1F1F;
+  font-family: 'Petrona', serif;
+  font-size: 22px;
+}
+
+p {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bold
+}
