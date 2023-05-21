@@ -3,9 +3,11 @@ const router = express.Router();
 const User = require("../models/user.model");
 const getUser = require("../middleware/getUser");
 const {body, validationResult} = require("express-validator");
+const bcrypt = require('bcrypt');
 
 router.get("/", async (req, res) => {
-    const allUsers = await User.findAll();
+    const allUsers = await User.findAll({where});
+
     res.status(200).send({allUsers});
 })
 
@@ -18,7 +20,9 @@ router.post("/", body("email").isEmail(), async (req, res) => {
     if (!errors.isEmpty()) {
         return res.status(400).send({errors: errors.array()});
     }
-    const user = await User.create(req.body);
+
+    const user = await User.create({email, password});
+
     res.status(200).send({user});
 })
 

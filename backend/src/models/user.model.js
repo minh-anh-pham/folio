@@ -16,6 +16,9 @@ User.init({
     password: {
         type: DataTypes.TEXT,
         allowNull: false
-    }}, {sequelize: db})
+    },
+    role: {
+        type: DataTypes.TEXT,
+    },}, {sequelize: db})
 
 module.exports = User;

@@ -30,7 +30,7 @@ async function seed() {
     const users = await User.bulkCreate([
         {email: "Email1", password: "Password1"},
         {email: "Email2", password: "Password2"},
-        {email: "Email3", password: "Password3"},
+        {email: "Email3", password: "Password3", role: "admin"},
     ]);
 
     // await users[1].addBook(books[0], {through: {currentPage: 0}}); doesn't work

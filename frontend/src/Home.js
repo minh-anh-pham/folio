@@ -3,10 +3,20 @@ import React from "react";
 import finger from "./finger-point.png";
 import writing from "./writing.png";
 import Card from "./Card";
+import LogInForm from "./LogInForm";
 import {useState, useEffect} from "react";
 
 const Header = (props) => {
     const [books, setBooks] = useState([]);
+    const [tab, setTab] = useState("logIn");
+
+    const handleLogInClick = () => {
+        setTab("logIn");
+    }
+
+    const handleSignUpClick = () => {
+        setTab("signUp");
+    }
 
     useEffect(() => {
         async function fetchBooks () {
@@ -34,7 +44,9 @@ const Header = (props) => {
 
         <p>Explore books & track your reading progress</p>
 
-        <div className="homeBookListWrapper">
+        {tab === "bookList" && (
+        <>
+            <div className="homeBookListWrapper">
             {books.map(book =>
                 <Card
                     key={book.title}
@@ -46,16 +58,24 @@ const Header = (props) => {
                     cover={book.cover}
                     id={book.id}
                 />)}
-        </div>
+            </div>
+        </>
+        )}
+
+        {(tab === "logIn" || tab === "signUp") && (
+        <>
+            <LogInForm tab={tab} />
+        </>
+        )}
 
         <div className="logInWrapper">
-            <div className="logIn">
+            <div className="logIn" onClick={handleLogInClick}>
             <img className="writing" src={writing} alt="hand-writing" />
             <h2><u>Log in</u></h2>
             <img className="writing-left" src={writing} alt="hand-writing" />
             </div>
 
-            <div className="signUp">
+            <div className="signUp" onClick={handleSignUpClick}>
             <img className="writing" src={writing} alt="hand-writing" />
             <h2><u>Sign up</u></h2>
             <img className="writing-left" src={writing} alt="hand-writing" />
