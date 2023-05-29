@@ -6,7 +6,7 @@ const {body, validationResult} = require("express-validator");
 const bcrypt = require('bcrypt');
 
 router.get("/", async (req, res) => {
-    const allUsers = await User.findAll({where});
+    const allUsers = await User.findAll();
 
     res.status(200).send({allUsers});
 })

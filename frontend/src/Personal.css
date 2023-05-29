@@ -1,0 +1,16 @@
+.personalWrapper h2 {
+    margin-top: -20px;
+    margin-bottom: 50px;
+}
+
+.personalBookList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.noBookmarks h2 {
+    margin-top: 30vh;
+    color: #55828B;
+}

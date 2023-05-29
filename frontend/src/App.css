@@ -1,6 +1,6 @@
-
 .App {
   text-align: center;
+  padding-bottom: 100px;
 }
 .App::-webkit-scrollbar {
   /* Chrome */
@@ -46,4 +46,18 @@ h3 {
 p {
   font-family: 'Libre Baskerville', serif;
   font-weight: bold
+}
+
+.personalTopNav {
+  margin-bottom: -15vh;
+  margin-top: -1vh;
+  padding-left: 20px;
+}
+
+.personalTopNav h3 {
+  color: #1F1F1F;
+}
+
+.personalTopNav a:visited {
+  color: #1F1F1F;
 }

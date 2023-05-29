@@ -1,11 +1,13 @@
 import React from "react";
 import {useState} from "react";
 import "./LogInForm.css";
+import {useNavigate} from "react-router-dom";
 
 const LogInForm = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [feedback, setFeedback] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -16,23 +18,39 @@ const LogInForm = (props) => {
                     headers: {"Content-Type": "application/json"},
                     body: JSON.stringify(Object.assign({}, {email}, {password}))
                     });
-                const data = await response.json();
-                console.log(data);
+
+                const responseMsg = await response.json();
+
+                setFeedback(responseMsg.message);
+
+                if (responseMsg.status === 200) {
+                    useNavigate("/personal");
+                }
             } catch (error) {
-                console.log(error);
+                console.error(error);
             }
         }
         else if (props.tab === "logIn") {
             try {
                 const response = await fetch(`http://localhost:5000/login`, {
                     method: "POST",
-                    headers: {"Content-Type": "application/json"},
+                    headers: {
+                        "Content-Type": "application/json",},
                     body: JSON.stringify(Object.assign({}, {email}, {password}))
-                    });
-                const responseMsg = await response.text();
-                setFeedback(responseMsg);
+                });
+
+                const responseMsg = await response.json();
+
+                localStorage.setItem("token", "Bearer " + responseMsg.token);
+                localStorage.setItem("currentUserId", responseMsg.user.id);
+
+                setFeedback(responseMsg.message);
+
+                if (responseMsg.message === "Successfully logged in") {
+                    navigate("/personal");
+                }
             } catch (error) {
-                console.log(error);
+                console.error(error);
             }
         }
     }

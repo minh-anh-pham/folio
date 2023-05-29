@@ -1,0 +1,40 @@
+.personalBookWrapper {
+    width: 300px;
+    align-content: center;
+    margin-bottom: 4vh;
+}
+
+.personalBookListShelf {
+    margin: auto;
+    margin-bottom: 40px;
+    width: 300px;
+    height: 40px;
+    background: url('https://www.lignaushop.de/images/product_images/original_images/E20A-U-21050_web_2771_8.jpg') no-repeat;
+    margin-top: -3px;
+    background-position: center;
+    filter: drop-shadow(0 0.20rem 0.20rem black);
+}
+
+.bookDetails {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: -10px;
+}
+
+.bookDetails h3 {
+    margin-top: -30px;
+}
+
+.bookCover img {
+    margin: auto;
+    display: block;
+    max-height: 450px;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    filter: drop-shadow(0 0.50rem 0.20rem black);
+}
+
+.bookDetails h3 {
+    color: black;
+}

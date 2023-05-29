@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import React from "react";
 import "./BookDetails.css";
 import TopNav from "./TopNav";
+import Progress from "./Progress";
 
 const BookDetails = () => {
     const {bookId} = useParams();
@@ -11,6 +12,7 @@ const BookDetails = () => {
     useEffect(() => {
         async function fetchBook () {
             try {
+                console.log("inside fetchbook")
                 const response = await fetch(`http://localhost:5000/books/${bookId}`, {
                     method: "GET",
                     headers: {"Content-Type": "application/json"},
@@ -18,7 +20,7 @@ const BookDetails = () => {
                 const data = await response.json();
                 setBook(data.book);
             } catch (error) {
-                console.log(error);
+                console.error(error);
             }
         }
         fetchBook();
@@ -33,6 +35,9 @@ const BookDetails = () => {
 
             <h2>{book.title}</h2>
             <h3>{book.author}</h3>
+
+            <Progress numPages={book.numOfPages} bookId={bookId} />
+
             <p className="subtitle">
                 <b>Published in</b>: {book.yearPublished} <br /><br />
                 <b>Publisher</b>: {book.publisher} <br /><br />

@@ -28,14 +28,16 @@ async function seed() {
     ]);
 
     const users = await User.bulkCreate([
-        {email: "Email1", password: "Password1"},
-        {email: "Email2", password: "Password2"},
-        {email: "Email3", password: "Password3", role: "admin"},
+        {email: "Email1@mail.com", password: "Password1"},
+        {email: "Email2@mail.com", password: "Password2"},
+        {email: "Email3@mail.com", password: "Password3", role: "admin"},
     ]);
 
-    // await users[1].addBook(books[0], {through: {currentPage: 0}}); doesn't work
-    await books[1].addUser(users[0], {through: {currentPage: 0}});
-    await books[2].addUser(users[2], {through: {currentPage: 0}});
+    const progresses = await Progress.bulkCreate([
+        {bookId: 1, userId: 1},
+        {currentPage: 10, bookId: 5, userId: 2},
+        {currentPage: 100, bookId: 10, userId: 3}
+    ]);
 }
 
 seed();

@@ -8,7 +8,7 @@ import {useState, useEffect} from "react";
 
 const Header = (props) => {
     const [books, setBooks] = useState([]);
-    const [tab, setTab] = useState("logIn");
+    const [tab, setTab] = useState("bookList");
 
     const handleLogInClick = () => {
         setTab("logIn");
@@ -16,6 +16,10 @@ const Header = (props) => {
 
     const handleSignUpClick = () => {
         setTab("signUp");
+    }
+
+    const handleTitleClick = () => {
+        setTab("bookList");
     }
 
     useEffect(() => {
@@ -36,9 +40,9 @@ const Header = (props) => {
 
     return (
         <>
-        <div className="titleWrapper">
+        <div className="titleWrapper" onClick={handleTitleClick}>
             <img className="finger-point" src={finger} alt="finger-point" />
-            <h1>{props.title}</h1>
+            <h1 >{props.title}</h1>
             <img className="finger-point-left" src={finger} alt="finger-point" />
         </div>
 

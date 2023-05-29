@@ -9,6 +9,7 @@ router.get("/", async (req, res) => {
 })
 
 router.get("/:id", getBook, async (req, res) => {
+    console.log("inside book get by id");
     res.status(200).send({book: req.book});
 })
 

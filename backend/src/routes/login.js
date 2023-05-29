@@ -1,7 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user.model");
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
+const JWT_SECRET = process.env.JWT_SECRET;
 
 router.post("/", async (req, res) => {
     const {email, password} = req.body;
@@ -10,18 +14,25 @@ router.post("/", async (req, res) => {
 
     if (email) where.email = email;
 
-    const user = await User.findOne({where});
+    const foundUser = await User.findOne({where});
 
-    if (user === null) {
-        res.status(404).send("Email not registered, please sign up");
+    if (foundUser === null) {
+        res.status(404).send({message: "Email not registered, please sign up"});
     }
 
-    if (user !== null && password) {
-        const isMatch = await bcrypt.compare(password, user.password);
+    const foundUserId = foundUser.id;
+    const foundUserEmail = foundUser.email;
+    const foundUserPassword = foundUser.password;
+
+    if (foundUser !== null && password) {
+        const isMatch = await bcrypt.compare(password, foundUserPassword);
+
         if (isMatch) {
-            res.status(200).send("Successfully logged in");
+            const token = jwt.sign({foundUserId, foundUserEmail}, JWT_SECRET);
+
+            return res.status(200).send({message: "Successfully logged in", token, user: foundUser});
         } else {
-            res.status(401).send("Wrong password");
+            return res.status(401).send({message: "Wrong password"});
         }
     }
 })

@@ -1,0 +1,65 @@
+.progressWrapper {
+    font-size: 20px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 20;
+    width: 50vw;
+    height: 250px;
+    margin: auto;
+    margin-bottom: -10px;
+    background-image: url("./rabbit.png");
+    background-size: auto 250px;
+    background-position: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.progressWrapper form {
+    text-align: center;
+    position: absolute;
+    margin-bottom: 50px;
+}
+
+input[type=number] {
+    width: 80px;
+    height: 30px;
+    font-size: 20px;
+    font-family: "Work Sans", sans-serif;
+    background: none;
+    border: none;
+    border-bottom: dashed;
+    text-align: center;
+}
+
+.feedbackWrapper {
+    flex: 1 1 100%;
+    margin-top: -100px;
+    padding-top: 100px;
+    margin-left: 70px;
+    padding-left: 146px;
+    padding-right: 120px;
+}
+
+.feedbackWrapper h3 {
+    font-size: 21px;
+    margin-top: 130px;
+}
+
+/* inside personal page */
+.bookDetails .progressWrapper {
+    background-image: none;
+    width: 100%;
+    height: auto;
+    margin-top: 20%;
+}
+
+.bookDetails .feedbackWrapper {
+    padding: 0;
+    margin: 0;
+}
+
+.bookDetails h3 {
+    padding: 0;
+}

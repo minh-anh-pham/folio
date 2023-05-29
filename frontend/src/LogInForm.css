@@ -45,4 +45,11 @@ input[type=email], input[type=password] {
 .feedback {
     padding-bottom: 30px;
     color: #55828B;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 40;
+}
+
+.logInFormWrapper button {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 40;
 }
