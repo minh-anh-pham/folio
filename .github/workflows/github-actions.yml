@@ -1,8 +1,8 @@
 on:
   push:
     branches: [main]
-  jobs:
-    test:
-      steps:
-        - run: npm ci
-        - run: npm test
+jobs:
+  test:
+    steps:
+      - run: npm ci
+      - run: npm test
