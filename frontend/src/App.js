@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
+import { Link, Route, Routes, useLocation } from "react-router-dom";
 import './App.css';
 import Home from "./Home";
 import BookDetails from "./BookDetails";
@@ -30,7 +30,6 @@ function App() {
     ): null}
 
     <div className="App" style={{cursor: 'url(manicule.png), auto'}}>
-
       <Routes>
         <Route path="/" element={<Home title="folio" />} />
         <Route path="/books/:bookId" element={<BookDetails />}/>

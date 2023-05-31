@@ -41,5 +41,5 @@ app.use((error, req, res, next) => {
 app.listen(5000, async () => {
     // make sure tables exist and are updated
     await db.sync();
-    console.log("Server is listening on port 5000");
+    //console.log("Server is listening on port 5000");
 });

@@ -4,9 +4,10 @@
   "description": "Personal library of books with options to record current page, add new books, view book details, etc.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "seed": "cd src && cd db && node seed.js",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "start": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -29,5 +30,9 @@
     "jsonwebtoken": "^9.0.0",
     "sequelize": "^6.31.1",
     "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
   }
 }

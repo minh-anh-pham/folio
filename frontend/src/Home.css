@@ -65,8 +65,12 @@ h1 {
     padding-top: 30px;
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
+}
+
+.homeBookListWrapper:hover, .homeBookListWrapper:active, .homeBookListWrapper:focus {
+    overflow-x: overlay;
 }
 
 .logInWrapper u {
