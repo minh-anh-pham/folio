@@ -3,6 +3,8 @@ on:
     branches: [main]
 jobs:
   test:
+    name: Test
+    runs-on: macOS
     steps:
       - run: npm ci
       - run: npm test
