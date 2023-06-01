@@ -1,9 +1,6 @@
 on:
   push:
     branches: [main]
-defaults:
-  run:
-    working-directory: folio
 jobs:
   test:
     name: Test
