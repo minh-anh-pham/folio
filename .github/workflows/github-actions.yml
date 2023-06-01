@@ -16,7 +16,7 @@ jobs:
           node-version: 16.x
       - name: Install dependencies
         # working-directory: frontend
-        working-directory: ${{matrix.dir}}
+        working-directory: backend
         run: npm ci
   build:
     name: Build and Deploy
@@ -31,11 +31,11 @@ jobs:
           node-version: 16.x
       - name: Install Railway
         # working-directory: frontend
-        working-directory: ${{matrix.dir}}
+        working-directory: backend
         run: npm i -g @railway/cli
       - name: Deploy
         # working-directory: frontend
-        working-directory: ${{matrix.dir}}
+        working-directory: backend
         run: railway up
         env:
           RAILWAY_TOKEN: ${{secrets.RAILWAY_TOKEN}}
