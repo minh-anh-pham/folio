@@ -3,7 +3,7 @@ on:
     branches: [main]
 defaults:
   run:
-    working-directory: backend
+    working-directory: folio
 jobs:
   test:
     name: Test
