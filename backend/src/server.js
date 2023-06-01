@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const db = require("./db/db");
 const logger = require("./middleware/logger");
+const path = require("path");
 
 const userRouter = require("./routes/users");
 const bookRouter = require("./routes/books");
@@ -24,6 +25,7 @@ app.use("/progresses", progressRouter);
 app.use("/signup", signupRouter);
 app.use("/login", loginRouter);
 app.use("/personal", personalRouter);
+app.use(express.static(path.join(__dirname + "/public")));
 
 // run node server.js -> postman -> localhost:3000 -> get 200
 app.get("/", (req, res) => {
