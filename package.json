@@ -1,5 +1,25 @@
 {
   "dependencies": {
     "sqlite3": "^5.1.6"
-  }
+  },
+  "name": "folio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon backend/src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minh-anh-pham/folio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minh-anh-pham/folio/issues"
+  },
+  "homepage": "https://github.com/minh-anh-pham/folio#readme",
+  "description": ""
 }
