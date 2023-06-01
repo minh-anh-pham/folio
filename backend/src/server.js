@@ -36,7 +36,7 @@ app.use((error, req, res, next) => {
     res.send({error: error.message, name: error.name, message: error.message});
   });
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 // start of application
 // run by $ node src/server.js
 app.listen(PORT, async () => {
