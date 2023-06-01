@@ -17,7 +17,6 @@ jobs:
           node-version: 16.x
       - name: Install dependencies
         run: npm ci
-        run: npm i -g @sqlite3/cli
   build:
     name: Build and Deploy
     needs: test
