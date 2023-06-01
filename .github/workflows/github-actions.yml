@@ -6,5 +6,6 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - run: cd backend
       - run: npm install
       - run: npm test
