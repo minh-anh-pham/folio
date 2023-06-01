@@ -36,9 +36,10 @@ app.use((error, req, res, next) => {
     res.send({error: error.message, name: error.name, message: error.message});
   });
 
+const PORT = process.env.PORT || 4000;
 // start of application
 // run by $ node src/server.js
-app.listen(5000, async () => {
+app.listen(PORT, async () => {
     // make sure tables exist and are updated
     await db.sync();
     //console.log("Server is listening on port 5000");
