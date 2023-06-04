@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname + "/public")));
 // run node server.js -> postman -> localhost:3000 -> get 200
 app.get("/*", (req, res) => {
     res.sendFile(
-        path.join(__dirname, ".../frontend/build/index.html"),
+        path.join(__dirname, "../public/index.html"),
         function (error) {
             if (error) {
                 res.status(500).send(error);
