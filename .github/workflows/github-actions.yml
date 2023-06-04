@@ -10,10 +10,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: use Node 16
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
       - name: Install dependencies
         working-directory: backend
         run: npm ci
@@ -24,10 +20,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: use Node 16
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
       - name: Install Railway
         working-directory: backend
         run: npm i -g @railway/cli
