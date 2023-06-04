@@ -1,6 +1,6 @@
 const {Sequelize} = require("sequelize");
 const path = require("path");
-import sqlite3 from "sqlite3";
+const sqlite3 = require("sqlite3");
 
 const db = new Sequelize({
     dialect: 'sqlite',
