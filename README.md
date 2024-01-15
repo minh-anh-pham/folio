@@ -10,7 +10,7 @@ Personal library of books with options to record current page, add new books, vi
 Simply download the github project.
 
 ### Executing program
-Run the following in your terminal: $ docker run folio
+Run the following in your terminal: $ docker compose up
 
 ## Author
 Minh Anh Pham
